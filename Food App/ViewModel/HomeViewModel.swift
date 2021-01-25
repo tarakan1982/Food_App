@@ -6,15 +6,60 @@
 //
 
 import SwiftUI
+import CoreLocation
+import Firebase
 
-struct HomeViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @Published var locationManager = CLLocationManager()
+    @Published var search = ""
+    @Published var userLocation: CLLocation!
+    @Published var userAddress = ""
+    @Published var noLocation = false
+    
+    @Published var showMenu = false
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse:
+            print("Авторизован")
+            self.noLocation = false
+            manager.requestLocation()
+        case .denied:
+            print("Доступ закрыт")
+            self.noLocation = true
+        default:
+            print("Неизвестный пользователь")
+            self.noLocation = false
+            locationManager.requestWhenInUseAuthorization()
+
+        }
     }
-}
-
-struct HomeViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeViewModel()
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.userLocation = locations.last
+        self.extractLocation()
+        
+        self.login()
+    }
+    func extractLocation() {
+        CLGeocoder().reverseGeocodeLocation(self.userLocation) { (res, error) in
+            guard let safeData = res else {return}
+            var address = ""
+            address += safeData.first?.name ?? ""
+            address += ", "
+            address += safeData.first?.locality ?? ""
+            self.userAddress = address
+        }
+    }
+    func login() {
+        Auth.auth().signInAnonymously { (res, err) in
+            if err != nil {
+                print(err!.localizedDescription)
+                return
+            }
+            print("Удача = \(res!.user.uid)")
+        }
     }
 }
