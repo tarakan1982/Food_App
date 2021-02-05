@@ -10,7 +10,9 @@
 		03E9810542D266FA81CC9CA2 /* Pods_Food_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF71E661861D24F56AD29EA /* Pods_Food_AppTests.framework */; };
 		2C52BE5825C01D6400EBF72E /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C52BE5725C01D6400EBF72E /* ItemView.swift */; };
 		2C52BE5E25C01F6500EBF72E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C52BE5D25C01F6500EBF72E /* SDWebImageSwiftUI */; };
+		2C90B47425CC2A0F00CB80DF /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90B47325CC2A0F00CB80DF /* Cart.swift */; };
 		2CB8061425BF135E00A4496C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8061325BF135E00A4496C /* Item.swift */; };
+		2CEF24EA25CD4D1700324F6F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF24E925CD4D1700324F6F /* CartView.swift */; };
 		2CF47A6625BEC2C600A1C499 /* Food_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF47A6525BEC2C600A1C499 /* Food_AppApp.swift */; };
 		2CF47A6825BEC2C600A1C499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF47A6725BEC2C600A1C499 /* ContentView.swift */; };
 		2CF47A6A25BEC2CE00A1C499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF47A6925BEC2CE00A1C499 /* Assets.xcassets */; };
@@ -44,7 +46,9 @@
 
 /* Begin PBXFileReference section */
 		2C52BE5725C01D6400EBF72E /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		2C90B47325CC2A0F00CB80DF /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		2CB8061325BF135E00A4496C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2CEF24E925CD4D1700324F6F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		2CF47A6225BEC2C600A1C499 /* Food App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF47A6525BEC2C600A1C499 /* Food_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_AppApp.swift; sourceTree = "<group>"; };
 		2CF47A6725BEC2C600A1C499 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				2CF47A9625BEC42000A1C499 /* Home.swift */,
 				2CF47AA025BEDE2A00A1C499 /* Menu.swift */,
 				2C52BE5725C01D6400EBF72E /* ItemView.swift */,
+				2CEF24E925CD4D1700324F6F /* CartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB8061325BF135E00A4496C /* Item.swift */,
+				2C90B47325CC2A0F00CB80DF /* Cart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CEF24EA25CD4D1700324F6F /* CartView.swift in Sources */,
 				2CF47A6825BEC2C600A1C499 /* ContentView.swift in Sources */,
 				2CF47A9725BEC42000A1C499 /* Home.swift in Sources */,
 				2CF47A6625BEC2C600A1C499 /* Food_AppApp.swift in Sources */,
@@ -465,6 +472,7 @@
 				2C52BE5825C01D6400EBF72E /* ItemView.swift in Sources */,
 				2CB8061425BF135E00A4496C /* Item.swift in Sources */,
 				2CF47AA125BEDE2A00A1C499 /* Menu.swift in Sources */,
+				2C90B47425CC2A0F00CB80DF /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

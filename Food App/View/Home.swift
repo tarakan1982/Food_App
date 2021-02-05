@@ -53,17 +53,19 @@ struct Home: View {
                             ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
                                 ItemView(item: item)
                                 HStack {
-                                    Text("Беслпатная доставка")
+                                    Text("Бесплатная доставка")
                                         .foregroundColor(.white)
                                         .padding(.vertical, 10)
                                         .padding(.horizontal)
                                         .background(Color("dimonPink"))
                                     Spacer(minLength: 0)
-                                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                                        Image(systemName: "plus")
+                                    Button(action: {
+                                        HomeModel.addToCart(item: item)
+                                    }, label: {
+                                        Image(systemName: item.isAdded ? "checkmark" : "plus")
                                             .foregroundColor(.white)
                                             .padding(10)
-                                            .background(Color("dimonPink"))
+                                            .background(item.isAdded ? Color.green : Color("dimonPink"))
                                             .clipShape(Circle())
                                     })
                                 }
